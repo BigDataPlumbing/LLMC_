@@ -5,7 +5,7 @@ import streamlit as st
 
 from streamlit_chat import message
 
-openai.api_key = st.secrets["API_KEYS"][openai]
+openai.api_key = st.secrets["openai"]
 
 content_count = 0
 
