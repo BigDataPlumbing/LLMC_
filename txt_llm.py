@@ -5,6 +5,7 @@ import streamlit as st
 from streamlit_chat import message
 
 
+openai.api_key = st.secrets["openai"]
 
 
 st.set_page_config(
