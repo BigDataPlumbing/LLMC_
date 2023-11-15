@@ -104,9 +104,10 @@ content_prompted = False
 
 
 if prompt := st.chat_input("Query:"):
-
+    
     model= "gpt-3.5-turbo-0613",
     st.session_state.messages.append({"role": "user", "content": prompt})
+    build_index()
     with st.chat_message("user"):
         st.markdown(prompt)
         
@@ -230,4 +231,4 @@ if __name__ == "__main__":
     # print(docs.keys())
     # indices = build_index(pages, docs)
     
-    build_index()
+    
