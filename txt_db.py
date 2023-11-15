@@ -225,4 +225,5 @@ if __name__ == "__main__":
     #pages = "wrk"
     docs = build_files(pages)
     # print(docs.keys())
-    indices = build_index(pages, docs)
+    #indices = build_index(pages, docs)
+    build_index()
