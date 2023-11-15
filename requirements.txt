@@ -5,8 +5,8 @@ streamlit-chat==0.0.2.1
 pinecone-client==2.2.1
 tqdm==4.65.0
 pinecone-client[grpc]
-langchain==0.0.220
-llama-index==0.5.27
+langchain
+llama-index
 google-auth==1.35.0
 google-auth-oauthlib==0.4.6
 google-api-core[grpc]
