@@ -58,7 +58,7 @@ def data_to_firestore(message):
         # Use the application default credentials to init firebase
     if not firebase_admin._apps:
         
-        uploaded_file = st.file_uploader("Choose a file", type=["pem", "json"])
+        uploaded_file = st.file_uploader("Choose a file", type=["json"])
 
         if uploaded_file is not None:
             # Display the file details
@@ -80,14 +80,14 @@ def data_to_firestore(message):
     
             db = firestore.client()
 
-    # Writing data to Firebase
-    doc_ref = db.collection(u'string').document(message.get('txt_id'))
-    doc_ref.set({
-        u'User': True,
-        u'Assistant': message.get('txt'),
-        u'Content': "@",
-        u'Note': message.get('nE'),
-    })
+            # Writing data to Firebase
+            doc_ref = db.collection(u'string').document(message.get('txt_id'))
+            doc_ref.set({
+                u'User': True,
+                u'Assistant': message.get('txt'),
+                u'Content': "@",
+                u'Note': message.get('nE'),
+            })
         
 
 
