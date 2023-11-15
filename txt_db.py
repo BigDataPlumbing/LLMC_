@@ -78,7 +78,7 @@ def data_to_firestore(message):
                 raise ValueError('Failed to determine project ID from service account certificate.')
             return credentials.Certificate(cert_path), project_id
     
-    db = firestore.client()
+            db = firestore.client()
 
     # Writing data to Firebase
     doc_ref = db.collection(u'string').document(message.get('txt_id'))
