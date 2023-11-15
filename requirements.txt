@@ -4,7 +4,6 @@ aiosignal==1.3.1
 streamlit-chat==0.0.2.1
 pinecone-client==2.2.1
 tqdm==4.65.0
-pinecone-client[grpc]
 langchain
 llama-index
 google-auth==1.35.0
