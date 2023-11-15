@@ -186,10 +186,11 @@ def build_index(pages, docs):
     )
 
     
-    pinecone_index = pinecone.Index("data")
+    # pinecone_index = pinecone.Index("data")
 
 
     pinecone.create_index("dat4", dimension=3, metric="cosine")
+    pinecone_index = pinecone.Index("dat4")
     pinecone_index.upsert("wrk_data", [1,2,3])
     pinecone_index.describe_index_stats()
 
@@ -225,5 +226,6 @@ if __name__ == "__main__":
     #pages = "wrk"
     docs = build_files(pages)
     # print(docs.keys())
-    #indices = build_index(pages, docs)
+    # indices = build_index(pages, docs)
+    
     build_index()
