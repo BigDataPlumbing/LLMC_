@@ -2,3 +2,13 @@ openai==0.27.0
 aiohttp==3.8.4
 aiosignal==1.3.1
 streamlit-chat==0.0.2.1
+json
+csv
+time
+pinecone
+tqdm
+pinecone_datasets
+base64
+firebase_admin
+langchain
+llama_index
