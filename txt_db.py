@@ -200,9 +200,9 @@ def build_index(pages, docs):
             metadata_filters={"page": page}
         )
         storage_context = StorageContext.from_defaults(vector_store=vector_store)
-        page_indices = GPTVectorStoreIndex.from_documents(
-            docs, storage_context=storage_context, service_context=service_data
-        )
+        #page_indices = GPTVectorStoreIndex.from_documents(
+        #    docs, storage_context=storage_context, service_context=service_data
+        #)
         page_indices.index_struct.index_id = page
 
 
