@@ -58,7 +58,7 @@ def data_to_firestore(message):
         # Use the application default credentials to init firebase
     if not firebase_admin._apps:
         
-        uploaded_file = st.file_uploader("Choose a file", type=["pem", "crt"])
+        uploaded_file = st.file_uploader("Choose a file", type=["pem", "json"])
 
         if uploaded_file is not None:
             # Display the file details
@@ -69,13 +69,14 @@ def data_to_firestore(message):
             
             # Display the result or perform further actions
             st.write("Certificate Path:", cert_path)
-        
-        cert_path = uploaded_file
-        with open(cert_path) as cert:
-            project_id = json.load(cert).get('project_id')
-        if not project_id:
-            raise ValueError('Failed to determine project ID from service account certificate.')
-        return credentials.Certificate(cert_path), project_id
+
+        if uploaded_file is not None:
+            cert_path = uploaded_file
+            with open(cert_path) as cert:
+                project_id = json.load(cert).get('project_id')
+            if not project_id:
+                raise ValueError('Failed to determine project ID from service account certificate.')
+            return credentials.Certificate(cert_path), project_id
     
     db = firestore.client()
 
