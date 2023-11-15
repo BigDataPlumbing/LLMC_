@@ -157,10 +157,11 @@ def create_pages(urls):
 
 def build_files(pages):
     docs = {}
-    for page in pages:
-        docs[page] = SimpleDirectoryReader(
-            input_files=[f"{page}.txt"]
-        ).load_data()
+    #for page in pages:
+    #    docs[page] = SimpleDirectoryReader(
+    #        input_files=[f"{page}.txt"]
+    #    ).load_data()
+    docs = {'In that mode, finite and static data can be loaded, e.g. from a table written in a static json file or from a spreed table.'}
     return docs
 
 
