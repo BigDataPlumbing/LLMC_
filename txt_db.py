@@ -22,7 +22,6 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Pinecone
 from langchain.document_loaders import TextLoader
 
-from pinecone_datasets import load_dataset
 #from datasets import load_dataset
 
 from llama_index import (
