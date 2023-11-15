@@ -7,7 +7,7 @@ import time
 import pinecone
 from tqdm.auto import tqdm  # this is our progress bar
 
-from pinecone_datasets import load_dataset
+#from pinecone_datasets import load_dataset
 
 from streamlit_chat import message
 
