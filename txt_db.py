@@ -189,9 +189,9 @@ def build_index(pages, docs):
     pinecone_index = pinecone.Index("data")
 
 
-    #pinecone.create_index("dat4", dimension=3, metric="cosine")
-    #pinecone_index.upsert("wrk_data", [1,2,3])
-    #pinecone_index.describe_index_stats()
+    pinecone.create_index("dat4", dimension=3, metric="cosine")
+    pinecone_index.upsert("wrk_data", [1,2,3])
+    pinecone_index.describe_index_stats()
 
     service_data = build_folders("gpt-3.5-turbo-0613")
 
