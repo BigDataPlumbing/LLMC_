@@ -201,7 +201,7 @@ def build_index(pages, docs):
         )
         storage_context = StorageContext.from_defaults(vector_store=vector_store)
         page_indices[page] = GPTVectorStoreIndex.from_documents(
-            docs[page], storage_context=storage_context, service_context=service_data
+            docs, storage_context=storage_context, service_context=service_data
         )
         page_indices[page].index_struct.index_id = page
 
