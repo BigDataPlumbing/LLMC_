@@ -174,7 +174,9 @@ def build_folders(model_name):
 
 
 
-def build_index(pages, docs):
+def build_index():
+
+    # def build_index(pages, docs):
 
     pine_api_key = st.secrets["pinek"]
     pine_api_env = st.secrets["pines"]
@@ -211,7 +213,7 @@ def build_index(pages, docs):
 
 
     print("Indexing complete.")
-    return page_indices
+    return 
     
     
 
