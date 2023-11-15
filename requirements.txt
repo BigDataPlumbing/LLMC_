@@ -2,22 +2,4 @@ openai
 aiohttp
 aiosignal
 streamlit-chat
-pinecone-client
-tqdm
-langchain
-llama-index
-google-auth
-google-auth-oauthlib
-google-api-core[grpc]
-google-api-python-client
-google-cloud-firestore
-firebase-admin
-google-cloud-storage
-jsonpickle
-jsonschema
-ujson
-simplejson
-python-dotenv
-canopy-sdk
-
 
