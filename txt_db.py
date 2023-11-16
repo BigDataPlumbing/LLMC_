@@ -47,13 +47,13 @@ content_count = 0
 
 MODEL = "text-embedding-ada-002"
 
-res = openai.Embedding.create(
-    input=[
-        "The processing pipeline (dataflow) that you define is modeled using a graph.",
-        "This graph models the relations between the different connectors,",
-        "In that mode, finite and static data can be loaded, e.g. from a table written in a static csv file or from a markdown table."
-    ], engine=MODEL
-)
+#res = openai.Embedding.create(
+#    input=[
+#        "The processing pipeline (dataflow) that you define is modeled using a graph.",
+#        "This graph models the relations between the different connectors,",
+#        "In that mode, finite and static data can be loaded, e.g. from a table written in a static csv file or from a markdown table."
+#    ], engine=MODEL
+#)
 
 
 def data_to_firestore(message):
