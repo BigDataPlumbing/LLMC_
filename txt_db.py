@@ -86,7 +86,7 @@ def data_to_firestore(message):
             
 
         if uploaded_file is not None:
-            st.write("Project:")
+            st.write("Project obj:")
             #cert_path = uploaded_file
             with open(cert_path) as cert:
                 project_id = json.load(cert).get('project_id')
@@ -101,25 +101,25 @@ def data_to_firestore(message):
             return
         
         
-        if credentials_obj is not None and message is not None:
+    if credentials_obj is not None and message is not None:
             
 
                     # Display the result or perform further actions
-            st.write("Certificate:", cert_path)
-            st.write("Project:", project_id_returned)
+        st.write("Certificate app:", cert_path)
+        st.write("Project:", project_id_returned)
 
-            default_app = firebase_admin.initialize_app(credentials_obj, {'projectId': 'emerald-pipe-400817', })
+        default_app = firebase_admin.initialize_app(credentials_obj, {'projectId': 'emerald-pipe-400817', })
     
-            db = firestore.client()
+        db = firestore.client()
 
             # Writing data to Firebase
-            doc_ref = db.collection(u'string').document(message.get('txt_id'))
-            doc_ref.set({
-                u'User': True,
-                u'Assistant': message.get('txt'),
-                u'Content': "@",
-                u'Note': message.get('nE'),
-            })
+        doc_ref = db.collection(u'string').document(message.get('txt_id'))
+        doc_ref.set({
+            u'User': True,
+            u'Assistant': message.get('txt'),
+            u'Content': "@",
+            u'Note': message.get('nE'),
+        })
             
 
 
