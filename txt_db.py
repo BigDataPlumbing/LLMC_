@@ -64,7 +64,7 @@ def data_to_firestore(message):
         uploaded_file = st.file_uploader("Choose a file", type=["json"])
         credentials_obj = None
         project_id_returned = None
-        app = None
+        
 
         if uploaded_file is not None:
             # Display the file details
@@ -84,7 +84,7 @@ def data_to_firestore(message):
                     # Display the certificate path
             st.write(f"Certificate Path: {cert_path}")
 
-        app = 1   
+           
 
         if uploaded_file is not None:
             st.write("Project obj:")
