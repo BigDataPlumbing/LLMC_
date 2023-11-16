@@ -56,6 +56,7 @@ MODEL = "text-embedding-ada-002"
 #    ], engine=MODEL
 #)
 
+uploaded_file = st.file_uploader("Choose a file", type=["json"])
 
 def data_to_firestore(message):
         # Use the application default credentials to init firebase
