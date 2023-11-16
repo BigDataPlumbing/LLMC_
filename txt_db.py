@@ -68,12 +68,20 @@ def data_to_firestore(message):
             st.write(uploaded_file.name)
             st.write(uploaded_file.type)
             st.write(uploaded_file.size)
-            
+
+                    # Get the content of the uploaded file
+            file_content = uploaded_file.read()
+
+        # Pass the file content to cert_path
+            cert_path = file_content
+
+                    # Display the certificate path
+            st.write(f"Certificate Path: {cert_path}")
 
             
 
         if uploaded_file is not None:
-            cert_path = uploaded_file
+            #cert_path = uploaded_file
             with open(cert_path) as cert:
                 project_id = json.load(cert).get('project_id')
             if not project_id:
@@ -85,7 +93,7 @@ def data_to_firestore(message):
         if uploaded_file is not None:
 
                     # Display the result or perform further actions
-            st.write("Certificate Path:", cert_path)
+            st.write("Certificate:", cert_path)
     
             db = firestore.client()
 
