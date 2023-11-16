@@ -90,6 +90,7 @@ def data_to_firestore(message):
             #cert_path = uploaded_file
             with open(cert_path) as cert:
                 project_id = json.load(cert).get('project_id')
+                st.write(project_id)
                 credentials_obj = credentials.Certificate(cert_path)
                 st.write("Certificate:", credentials_obj)
                 project_id_returned = project_id
@@ -100,7 +101,7 @@ def data_to_firestore(message):
             return
         
         
-        if uploaded_file is not None and message is not None:
+        if credentials_obj is not None and message is not None:
             
 
                     # Display the result or perform further actions
