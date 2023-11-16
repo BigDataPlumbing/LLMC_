@@ -61,7 +61,7 @@ def data_to_firestore(message):
         # Use the application default credentials to init firebase
     if not firebase_admin._apps:
         
-        uploaded_file = st.file_uploader("Choose a file", type=["json"])
+        #uploaded_file = st.file_uploader("Choose a file", type=["json"])
 
         if uploaded_file is not None:
             # Display the file details
