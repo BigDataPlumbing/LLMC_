@@ -84,7 +84,7 @@ def data_to_firestore(message):
                     # Display the certificate path
             st.write(f"Certificate Path: {cert_path}")
 
-            
+        app = 1   
 
         if uploaded_file is not None:
             st.write("Project obj:")
@@ -99,7 +99,7 @@ def data_to_firestore(message):
                 st.write("Failed to determine project ID from service account certificate.")
                 raise ValueError('Failed to determine project ID from service account certificate.')
             #return credentials.Certificate(cert_path), project_id
-            return app(1)
+            return
         
         st.write(" - - - ")
         #st.write(app)
