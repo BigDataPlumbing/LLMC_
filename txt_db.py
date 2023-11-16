@@ -64,6 +64,7 @@ def data_to_firestore(message):
         uploaded_file = st.file_uploader("Choose a file", type=["json"])
         credentials_obj = None
         project_id_returned = None
+        app = None
 
         if uploaded_file is not None:
             # Display the file details
@@ -98,10 +99,10 @@ def data_to_firestore(message):
                 st.write("Failed to determine project ID from service account certificate.")
                 raise ValueError('Failed to determine project ID from service account certificate.')
             #return credentials.Certificate(cert_path), project_id
-            return
+            return app = 1
         
         
-        if uploaded_file is not None:
+        if app is not None:
             
 
                     # Display the result or perform further actions
