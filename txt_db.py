@@ -56,7 +56,6 @@ MODEL = "text-embedding-ada-002"
 #    ], engine=MODEL
 #)
 
-uploaded_file = st.file_uploader("Choose a file", type=["json"])
 
 def data_to_firestore(message):
         # Use the application default credentials to init firebase
@@ -263,7 +262,7 @@ if __name__ == "__main__":
     
     log_txt = {'@type': 'type.googleapis.com/google.pubsub.v1.PubsubMessage','attributes': {'txt_Id': 'Words', 'NumId': '123', 'RegId': 'logs', 'RegistryLocation': 'nam5','gatewayId': 'logs_gateway', 'projectId': 'emerald-pipe-400817'}, 'data': 'abc123'}
     data_to_firestore(log_txt)
-    st.write("Details:")
+    st.write("Details :")
     
     pages = create_pages(urls)
     
