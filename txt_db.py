@@ -208,6 +208,28 @@ if prompt := st.chat_input("Query:"):
     log_txt = {'@type': 'type.googleapis.com/google.pubsub.v1.PubsubMessage','attributes': {'txt_Id': 'Words', 'NumId': '123', 'RegId': 'logs', 'RegistryLocation': 'nam5','gatewayId': 'logs_gateway', 'projectId': 'emerald-pipe-400817'}, 'data': 'abc123'}
     data_to_firestore(log_txt)
 
+    with st.chat_message("user"):
+        st.markdown(prompt)
+        
+
+    with st.chat_message("assistant"):
+        message_placeholder = st.empty()
+        result = ""
+        content_prompted = True
+                
+        for response in openai.ChatCompletion.create(
+            model= "gpt-3.5-turbo-0613",
+            messages=[
+                {"role": m["role"], "content": m["content"]}
+                for m in st.session_state.messages
+            ],
+            stream=True,
+        ):
+            result += response.choices[0].delta.get("content", "")
+            message_placeholder.markdown(result + "▌")
+            content_count += 1
+        message_placeholder.markdown(result)
+
     st.session_state.messages.append({"role": "assistant", "content": result})
     
     content_concluded = True
