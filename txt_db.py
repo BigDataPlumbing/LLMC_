@@ -62,6 +62,8 @@ def data_to_firestore(message):
     if not firebase_admin._apps:
         
         uploaded_file = st.file_uploader("Choose a file", type=["json"])
+        credentials_obj = None
+        project_id_returned = None
 
         if uploaded_file is not None:
             # Display the file details
@@ -88,16 +90,24 @@ def data_to_firestore(message):
             #cert_path = uploaded_file
             with open(cert_path) as cert:
                 project_id = json.load(cert).get('project_id')
+                credentials_obj = credentials.Certificate(cert_path)
+                st.write("Certificate:", credentials_obj)
+                project_id_returned = project_id
             if not project_id:
                 st.write("Failed to determine project ID from service account certificate.")
                 raise ValueError('Failed to determine project ID from service account certificate.')
-            return credentials.Certificate(cert_path), project_id
+            #return credentials.Certificate(cert_path), project_id
+            return
         
         
         if uploaded_file is not None and message is not None:
+            
 
                     # Display the result or perform further actions
             st.write("Certificate:", cert_path)
+            st.write("Project:", project_id_returned)
+
+            default_app = firebase_admin.initialize_app(credentials_obj, {'projectId': 'emerald-pipe-400817', })
     
             db = firestore.client()
 
