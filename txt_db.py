@@ -94,7 +94,7 @@ def data_to_firestore(message):
             return credentials.Certificate(cert_path), project_id
         
         
-        if uploaded_file is not None:
+        if uploaded_file is not None and message is not None:
 
                     # Display the result or perform further actions
             st.write("Certificate:", cert_path)
@@ -248,7 +248,7 @@ if content_concluded and content_prompted and content_count > 1:
 if __name__ == "__main__":
     
     log_txt = {'@type': 'type.googleapis.com/google.pubsub.v1.PubsubMessage','attributes': {'txt_Id': 'Words', 'NumId': '123', 'RegId': 'logs', 'RegistryLocation': 'nam5','gatewayId': 'logs_gateway', 'projectId': 'emerald-pipe-400817'}, 'data': 'abc123'}
-    #data_to_firestore(log_txt)
+    data_to_firestore(log_txt)
     st.write("Details:")
     
     pages = create_pages(urls)
