@@ -61,7 +61,7 @@ def data_to_firestore(message):
         # Use the application default credentials to init firebase
     if not firebase_admin._apps:
         
-        #uploaded_file = st.file_uploader("Choose a file", type=["json"])
+        uploaded_file = st.file_uploader("Choose a file", type=["json"])
 
         if uploaded_file is not None:
             # Display the file details
@@ -84,6 +84,7 @@ def data_to_firestore(message):
             
 
         if uploaded_file is not None:
+            st.write("Project:")
             #cert_path = uploaded_file
             with open(cert_path) as cert:
                 project_id = json.load(cert).get('project_id')
@@ -247,7 +248,8 @@ if content_concluded and content_prompted and content_count > 1:
 if __name__ == "__main__":
     
     log_txt = {'@type': 'type.googleapis.com/google.pubsub.v1.PubsubMessage','attributes': {'txt_Id': 'Words', 'NumId': '123', 'RegId': 'logs', 'RegistryLocation': 'nam5','gatewayId': 'logs_gateway', 'projectId': 'emerald-pipe-400817'}, 'data': 'abc123'}
-    data_to_firestore(log_txt)
+    #data_to_firestore(log_txt)
+    st.write("Details:")
     
     pages = create_pages(urls)
     
