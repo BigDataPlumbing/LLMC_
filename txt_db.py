@@ -69,8 +69,7 @@ def data_to_firestore(message):
             st.write(uploaded_file.type)
             st.write(uploaded_file.size)
             
-            # Display the result or perform further actions
-            st.write("Certificate Path:", cert_path)
+
             
 
         if uploaded_file is not None:
@@ -84,6 +83,9 @@ def data_to_firestore(message):
         
         
         if uploaded_file is not None:
+
+                    # Display the result or perform further actions
+            st.write("Certificate Path:", cert_path)
     
             db = firestore.client()
 
