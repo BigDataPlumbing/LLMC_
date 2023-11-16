@@ -204,7 +204,7 @@ if prompt := st.chat_input("Query:"):
     
     model= "gpt-3.5-turbo-0613",
     st.session_state.messages.append({"role": "user", "content": prompt})
-    build_index()
+    #build_index()
     log_txt = {'@type': 'type.googleapis.com/google.pubsub.v1.PubsubMessage','attributes': {'txt_Id': 'Words', 'NumId': '123', 'RegId': 'logs', 'RegistryLocation': 'nam5','gatewayId': 'logs_gateway', 'projectId': 'emerald-pipe-400817'}, 'data': 'abc123'}
     data_to_firestore(log_txt)
     with st.chat_message("user"):
