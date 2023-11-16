@@ -95,10 +95,10 @@ def data_to_firestore(message):
                 credentials_obj = credentials.Certificate(cert_path)
                 st.write("Certificate:", credentials_obj)
                 project_id_returned = project_id
-            #if not project_id:
-            #    st.write("Failed to determine project ID from service account certificate.")
-            #    raise ValueError('Failed to determine project ID from service account certificate.')
-            #return credentials.Certificate(cert_path), project_id
+            if not project_id:
+                st.write("Failed to determine project ID from service account certificate.")
+                raise ValueError('Failed to determine project ID from service account certificate.')
+            return credentials.Certificate(cert_path), project_id
             #continue
         
         st.write(" - - - ")
