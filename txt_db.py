@@ -101,7 +101,9 @@ def data_to_firestore(message):
             #return credentials.Certificate(cert_path), project_id
             return app = 1
         
-        
+        st.write(" - - - ")
+        st.write(app)
+            
         if app is not None:
             
 
