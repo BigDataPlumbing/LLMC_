@@ -101,7 +101,7 @@ def data_to_firestore(message):
             return
         
         
-        if project_id_returned is not None:
+        if uploaded_file is not None:
             
 
                     # Display the result or perform further actions
