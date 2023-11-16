@@ -4,6 +4,7 @@ import streamlit as st
 import json
 import csv
 import time
+import tempfile
 import pinecone
 from tqdm.auto import tqdm  # this is our progress bar
 
@@ -72,8 +73,10 @@ def data_to_firestore(message):
                     # Get the content of the uploaded file
             file_content = uploaded_file.read()
 
-        # Pass the file content to cert_path
-            cert_path = file_content
+        # Create a temporary file
+            with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+                temp_file.write(file_content)
+                cert_path = temp_file.name
 
                     # Display the certificate path
             st.write(f"Certificate Path: {cert_path}")
