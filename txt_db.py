@@ -102,7 +102,7 @@ def data_to_firestore(message):
             return app = 1
         
         st.write(" - - - ")
-        st.write(app)
+        #st.write(app)
             
         if app is not None:
             
