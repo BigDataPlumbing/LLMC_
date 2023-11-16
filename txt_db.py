@@ -94,7 +94,7 @@ def data_to_firestore(message):
             return credentials.Certificate(cert_path), project_id
         
         
-        if cert_path is not None and message is not None:
+        if uploaded_file is not None and message is not None:
 
                     # Display the result or perform further actions
             st.write("Certificate:", cert_path)
