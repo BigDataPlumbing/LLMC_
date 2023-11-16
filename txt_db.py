@@ -24,14 +24,15 @@ from langchain.document_loaders import TextLoader
 
 #from datasets import load_dataset
 
-from llama_index import (
-    SimpleDirectoryReader,
-    LLMPredictor,
-    ServiceContext,
-    GPTVectorStoreIndex,
-    QuestionAnswerPrompt,
-    PineconeReader,
-)
+#from llama_index import (
+#    SimpleDirectoryReader,
+#    LLMPredictor,
+#    ServiceContext,
+#    GPTVectorStoreIndex,
+#    QuestionAnswerPrompt,
+#    PineconeReader,
+#)
+
 from llama_index.vector_stores import PineconeVectorStore
 from llama_index.storage.storage_context import StorageContext
 from langchain.chat_models import ChatOpenAI
@@ -120,11 +121,11 @@ def build_files(pages):
 
 
 def build_folders(model_name):
-    OAI_api_key = st.secrets["openai"]
-    llm_predictor = LLMPredictor(
-        llm=ChatOpenAI(temperature=0, model_name=model_name, openai_api_key = OAI_api_key)
-    )
-    return ServiceContext.from_defaults(llm_predictor=llm_predictor)
+    #OAI_api_key = st.secrets["openai"]
+    #llm_predictor = LLMPredictor(
+    #    llm=ChatOpenAI(temperature=0, model_name=model_name, openai_api_key = OAI_api_key)
+    #)
+    return #ServiceContext.from_defaults(llm_predictor=llm_predictor)
 
 
 
@@ -152,13 +153,13 @@ def build_index():
 
     service_data = build_folders("gpt-3.5-turbo-0613")
 
-    for page in pages:
+    #for page in pages:
         
-        vector_store = PineconeVectorStore(
-            pinecone_index=pinecone_index,
-            metadata_filters={"page": page}
-        )
-        storage_context = StorageContext.from_defaults(vector_store=vector_store)
+        #vector_store = PineconeVectorStore(
+        #    pinecone_index=pinecone_index,
+        #    metadata_filters={"page": page}
+        #)
+        #storage_context = StorageContext.from_defaults(vector_store=vector_store)
         #page_indices = GPTVectorStoreIndex.from_documents(
         #    docs, storage_context=storage_context, service_context=service_data
         #)
