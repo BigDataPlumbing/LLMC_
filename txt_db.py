@@ -101,7 +101,7 @@ def data_to_firestore(message):
             return
         
         
-    if credentials_obj is not None and message is not None:
+    #if credentials_obj is not None and message is not None:
             
 
                     # Display the result or perform further actions
