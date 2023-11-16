@@ -102,7 +102,6 @@ def data_to_firestore(message):
             #continue
         
         st.write(" - - - ")
-        #st.write(app)
             
         if uploaded_file is not None:
             
